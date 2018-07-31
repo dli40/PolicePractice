@@ -1,0 +1,33 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS policepractice.callsforservice (
+  `cfsid` int,
+  `cfsnumber` int,
+  `date` date,
+  `time` timestamp,
+  `calltype` string,
+  `source` string,
+  `status` string,
+  `priority` int,
+  `incidentnumber` int,
+  `beat` int,
+  `addressid` int,
+  `housenumber` int,
+  `streetprefix` string,
+  `streetname` string,
+  `streettype` string,
+  `apt` string,
+  `xtreetprefix` string,
+  `xstreetname` string,
+  `xstreettype` string,
+  `city` string,
+  `state` string,
+  `zip` int,
+  `locationinfo` string,
+  `commonname` string,
+  `natureofcall` string 
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES (
+  'serialization.format' = ',',
+  'field.delim' = ','
+) LOCATION 's3://police-store-again/CSV-Files/'
+TBLPROPERTIES ('has_encrypted_data'='false');
