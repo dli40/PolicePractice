@@ -1,0 +1,43 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS policepractice.blDATA (
+  `arrestid` int,
+  `arrestnumber` int,
+  `arrestdate` date,
+  `arresttime` timestamp,
+  `shieldnumber` int,
+  `officerlastname` string,
+  `officerfirstname` string,
+  `arresttype` string,
+  `status` string,
+  `casenumber` int,
+  `subjecttype` string,
+  `statute` string,
+  `dispo` string,
+  `sub_addressid` string,
+  `sub_housenumber` int,
+  `sub_streetprefix` string,
+  `sub_streetname` string,
+  `sub_streettype` string,
+  `sub_apt` string,
+  `sub_city` string,
+  `sub_state` string,
+  `sub_zip` int,
+  `arr_addressid` int,
+  `arr_housenumber` int,
+  `arr_streetname` string,
+  `arr_streettype` string,
+  `arr_xstreetname` string,
+  `arr_state` string,
+  `race` string,
+  `haircolor` string,
+  `height` int,
+  `jacketid` int,
+  `firstname` string,
+  `middlename` string,
+  `lastname` string 
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+WITH SERDEPROPERTIES (
+  'serialization.format' = ',',
+  'field.delim' = ','
+) LOCATION 's3://police-store-again/CSV-Files/'
+TBLPROPERTIES ('has_encrypted_data'='false');
