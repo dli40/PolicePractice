@@ -1,4 +1,2 @@
-CFSID	int,
-cfsnumber	int,date date,time timestamp, calltype string, source string, status string, priority	int,IncidentNumber int, beat int,addressid int,housenumber
-int, streetprefix string,	streetname string,streettype string,apt string, xtreetprefix string, xstreetname string, xstreettype string, city string,state string,zip int,LocationInfo string,CommonName string,
+CFSID int,cfsnumber int,date date,time timestamp, calltype string, source string, status string, priority int,IncidentNumber int, beat int,addressid int,housenumber int, streetprefix string,	streetname string,streettype string,apt string, xtreetprefix string, xstreetname string, xstreettype string, city string,state string,zip int,LocationInfo string,CommonName string,
 NatureOfCall string 
