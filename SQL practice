@@ -1,0 +1,13 @@
+--Create view with date, beat, priority from callsforservice
+CREATE OR REPLACE VIEW callsForServiceSnapShot AS
+SELECT date, priority,beat,city
+FROM callsforservice
+WHERE beat=7 AND source='911';
+
+--create view for asian people from arreststry
+CREATE OR REPLACE VIEW arrestSnapShot AS
+SELECT arrestdate, casenumber, status, haircolor,weight,arresttype
+FROM arreststry WHERE race ='OTHER' AND lastname='LI'
+
+--no records match this actually
+SELECT * FROM arrestsnapshot a JOIN callsforservicesnapshot c ON a.arrestdate=c.date;
