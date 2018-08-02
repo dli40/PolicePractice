@@ -1,0 +1,19 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS policepractice.yelp (
+  `id` string,
+  `alias` string,
+  `image_url` string,
+  `is_closed` string,
+  `url` string,
+  `review_count` int,
+  `rating` double,
+  `restaurant_reservation` string,
+  `price` string,
+  `phone` string,
+  `display_phone` string,
+  `distance` double 
+)
+ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'
+WITH SERDEPROPERTIES (
+  'serialization.format' = '1'
+) LOCATION 's3://police-store-again/JSON/'
+TBLPROPERTIES ('has_encrypted_data'='false');
