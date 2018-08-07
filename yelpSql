@@ -1,19 +1,32 @@
-CREATE EXTERNAL TABLE IF NOT EXISTS policepractice.yelp (
-  `id` string,
-  `alias` string,
-  `image_url` string,
-  `url` string,
-  `review_count` int,
-  `rating` double,
-  `transactions` string,
-  `price` string,
-  `phone` string,
-  `display_phone` string,
-  `distance` double 
-)
-ROW FORMAT  serde 'org.apache.hive.hcatalog.data.JsonSerDe'
-WITH SERDEPROPERTIES (
-  'serialization.format' = '1'
-  'ignore.malformed.json' = 'true'
-) LOCATION 's3://police-store-again/JSON/'
-TBLPROPERTIES ('has_encrypted_data'='false');
+CREATE EXTERNAL TABLE `yelpbusiness_json`(
+  `id` string COMMENT 'from deserializer', 
+  `alias` string COMMENT 'from deserializer', 
+  `image_url` string COMMENT 'from deserializer', 
+  `url` string COMMENT 'from deserializer', 
+  `review_count` int COMMENT 'from deserializer', 
+  `rating` double COMMENT 'from deserializer', 
+  `transactions` string COMMENT 'from deserializer', 
+  `price` string COMMENT 'from deserializer', 
+  `phone` string COMMENT 'from deserializer', 
+  `display_phone` string COMMENT 'from deserializer', 
+  `distance` double COMMENT 'from deserializer')
+ROW FORMAT SERDE 
+  'org.openx.data.jsonserde.JsonSerDe' 
+WITH SERDEPROPERTIES ( 
+  'paths'='alias,display_phone,distance,id,image_url,phone,price,rating,review_count,transactions,url') 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  's3://police-store-again/JSON/yelpbusiness.json'
+TBLPROPERTIES (
+  'CrawlerSchemaDeserializerVersion'='1.0', 
+  'CrawlerSchemaSerializerVersion'='1.0', 
+  'UPDATED_BY_CRAWLER'='yelpBoi', 
+  'averageRecordSize'='527', 
+  'classification'='json', 
+  'compressionType'='none', 
+  'recordCount'='3', 
+  'sizeKey'='1581', 
+  'typeOfData'='file')
