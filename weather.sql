@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE `weathersmall_json`(
+CREATE EXTERNAL TABLE `weathersmalljson`(
   `date` string COMMENT 'from deserializer', 
   `maxtempc` int COMMENT 'from deserializer', 
   `maxtempf` int COMMENT 'from deserializer', 
@@ -41,10 +41,15 @@ CREATE EXTERNAL TABLE `weathersmall_json`(
 ROW FORMAT SERDE 
   'org.openx.data.jsonserde.JsonSerDe' 
 WITH SERDEPROPERTIES ( 
- 'paths'='date,maxtempc,maxtempf,mintempc,mintempf,totalsnow_cm,sunhour,uvindex,sunrise,sunset,moonrise,moonset,moon_phase,moon_illumination,time,tempc,tempf,windspeedmiles,windspeedkmph,windirdeg,winddir16point,weathercode,precipmm,humidity,visibility,pressure,cloudcover,heatindexc,heatindexf,dewpointc,dewpointf,windchillc,windchillf,windgustmiles,windgustkmph,feelslikec,feelslikef') 
+ 'paths'='date,maxtempc,maxtempf,mintempc,mintempf,totalsnow_cm,sunhour,uvindex,sunrise,sunset,moonrise,moonset,moon_phase,moon_illumination,time,tempc,tempf,windspeedmiles,windspeedkmph,windirdeg,winddir16point,weathercode,precipmm,humidity,visibility,pressure,cloudcover,heatindexc,heatindexf,dewpointc,dewpointf,windchillc,windchillf,windgustmiles,windgustkmph,feelslikec,feelslikef')
+ 
 STORED AS INPUTFORMAT 
   'org.apache.hadoop.mapred.TextInputFormat' 
 OUTPUTFORMAT 
   'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
 LOCATION
-  's3://police-store-again/JSON/weatherSmall.json'
+  's3://police-store-again/JSON/weatherSmall.js'
+TBLPROPERTIES (
+  'classification'='json', 
+  'compressionType'='none', 
+  'typeOfData'='file')
