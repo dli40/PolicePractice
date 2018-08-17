@@ -1,0 +1,165 @@
+
+h1
+{
+	text-align: center;
+}
+
+#upper-date
+{
+	font-size: .4em;
+	font-family: helvetica;
+	float: right;
+	padding-top: 2%;
+}
+
+.inline
+{
+	display: inline;
+}
+
+.float-left
+{
+	float: left;
+}
+.float-right
+{
+	float: right;
+}
+.padding
+{
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.padding-bottom
+{
+	padding-bottom: 5%;
+}
+
+.padding-top
+{
+	padding-top: .5%
+}
+
+#template
+{
+	padding-right: 5%;
+}
+
+
+.nav-tabs
+{
+	border-bottom: hidden;
+}
+
+
+
+.right-button
+{
+	display: inline-flex; /*inline-flex*/
+	float: right;
+	margin-left: auto;
+}
+
+.shift-right
+{
+	display: inline; /*inline-flex*/
+	margin-left: 3em;
+}
+
+#save-template
+{
+	margin-top: 1em;
+}
+
+.blue-box
+{
+	display: inline; /*inline-flex*/
+	/*border: black solid 1px;*/
+	/*float: right;*/
+/*	background-color: teal;*/
+
+}
+
+.buttonSpace
+{
+	margin-bottom: 20%;
+}
+
+.right
+{
+	margin-left: 150%;
+}
+
+.left
+{
+	margin-right: 150%;
+	margin-left: 100%;
+}
+
+.float-right
+{
+	float: right;
+	display: inline;
+	margin-right:auto;
+}
+
+#date-update
+{
+	/*margin-right: 6%;*/
+	display: inline-block;
+}
+
+[name=Findings]
+{
+	width: 100%;
+	height: 40%;
+}
+
+#bottom-note
+{
+	display: inline;
+}
+#report-find-btn
+{
+	margin-top: 5%;
+	text-align: center /*float:left;*/	/*margin-left: 35%;*/
+}
+
+#report-gen-btn
+{
+	margin-top: 5%;
+	text-align: center;
+	/*margin-left: 35%;*/
+	/*float:left;*/
+}
+
+
+#main-frame
+{
+	border: black solid 1px;
+}
+
+.space-left
+{
+	margin-right: 2%;
+	margin-left: 2.5%;
+}
+
+.space-right
+{
+	margin-left: 2%;
+}
+
+.big-img
+{
+  display: inline; /*inline-block*/
+  max-width:75%; /*65%*/
+  overflow: hidden;
+  padding: 1%;
+  float: left;
+}
+/*.btn-group-vertical
+{
+	float: left;
+}*/
