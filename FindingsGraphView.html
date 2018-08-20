@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Graph View - CA Findings</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <h1>Findings <span id="upper-date">Date: August 10, 2018</span></h1>
+
+
+  <div class="container"> <!--FIST CONTAINER: ALL THE HEADER STUFF------------------------------------------------------>
+    <h3 class="inline float-left space-left" id="template">Templates</h3> <!-------------------------------------------TEMPLATE-->
+    <ul class="nav nav-tabs padding-top"><!-----------------------------------------------------------------TABS-->
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="FindingsMapView.html">Map</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="FindingsGraphView.html">Graph</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu2">Photos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#menu2">Other Reports</a>
+        </li>
+        <span class="right-button">
+          
+        <li class="nav-item ">
+            <button>Previous</button>
+          <li class="nav-item " >
+            <button>Next</button>
+          </li>
+
+        </span> 
+      </ul>
+    </div> <!--container-->
+
+    <div class="container"> 
+      <div class="row">
+        <div class="col-3">
+          <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle shift-right" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Custom Template</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Default</a>
+                <a class="dropdown-item" href="#">Officer Jones</a>
+                <a class="dropdown-item" href="#"> <em>New Template</em></a>
+              </div>
+          </div>
+          <button class="shift-right" id="save-template">Save Template</button>
+        </div>
+        <div class="col-9" id="main-frame" >
+          <img id="weatherPic"src="weatherPic.png" alt="graph of weather"> 
+          <div class="btn-group-vertical" id="border-right"> <!--DROPDOWNS CENSUS WEATHER OTHER DATA-->
+            <div class="dropright"> <!--CENSUS-->
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Census
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="form-group form-check"> <!--FIRST CHECKBOX-->
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Race</label>
+                </div>
+                <div class="form-group form-check"> 
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Family Income</label>
+                 </div>
+                <div class="form-group form-check"> 
+                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Gender</label>
+                 </div>
+              </div>
+            </div> <!--CENSUS-->
+            <div class="dropright"> <!--WEATHER-->
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Weather
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="form-group form-check"> <!--FIRST CHECKBOX-->
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">TempF</label>
+                </div>
+                <div class="form-group form-check"> 
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Sunrise</label>
+                 </div>
+                <div class="form-group form-check"> 
+                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Sunset</label>
+                 </div>
+                  <div class="form-group form-check"> 
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Precip</label>
+                 </div>
+                <div class="form-group form-check"> 
+                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Visibility</label>
+                 </div>
+                  <div class="form-group form-check"> 
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Cloud Cover</label>
+                 </div>
+              </div>
+            </div> <!--WEATHER-->
+            <div class="dropright"> <!--OTHER DATA-->
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Other Data
+              </button>
+               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div class="form-group form-check"> <!--FIRST CHECKBOX-->
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Category</label>
+                </div>
+              </div>
+            </div> <!--OTHER DATA-->
+
+
+            
+
+
+
+
+
+          </div>
+        </div> <!--class col-9-->
+  
+    
+    </div> <!--row-->
+  </div><!--container -->
+    
+    <div class="container">
+  <h4>Notes</h4>      
+  <div class="row">
+    <div class="col-9">
+      <textarea name="Findings" rows="12" wrap="soft" placeholder="We recieved multiple reports of graphiti artists in the area,
+      may be caused by broken street lights and the recent rainy weather."></textarea>
+    </div>
+    <div class="col-3" id="bottom-note">
+      <button id="report-find-btn">Report Finding</button>
+      <button id="report-gen-btn">Report Generation</button>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Switch">Switch</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+</body>
+</html>
