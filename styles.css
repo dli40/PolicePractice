@@ -159,7 +159,9 @@ h1
   padding: 1%;
   float: left;
 }
-/*.btn-group-vertical
+
+#weatherPic
 {
-	float: left;
-}*/
+	width: 65%;
+	max-width: 80%;
+}
